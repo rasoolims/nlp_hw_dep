@@ -51,5 +51,6 @@ a_vocab_writer.write('SHIFT'+' 0' +'\n')
 for i, d in enumerate(label_vocab):
 	a_vocab_writer.write('LEFT-ARC:'+d+' '+str(i+1)+'\n')
 for i, d in enumerate(label_vocab):
-	a_vocab_writer.write('RIGHT-ARC:'+d+' '+str(2*i+1)+'\n')
+	a_vocab_writer.write('RIGHT-ARC:'+d+' '+str(i+1+len(label_vocab))+'\n')
+	
 a_vocab_writer.close()
