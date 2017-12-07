@@ -87,7 +87,7 @@ def read_conll(fh, test=False):
     :param fh: file
     :return: a list of @ConllEntry objects
     '''
-    root = DependencyToken(0, '*root*', '*root*', 'ROOT-POS', 'ROOT-CPOS', '_', -1, 'rroot', '_', '_')
+    root = DependencyToken(0, '<root>', '<root>', '<root>', '<root>', '_', -1, 'rroot', '_', '_')
     tokens = [root]
     for line in codecs.open(fh, 'r', encoding='UTF-8'):
         tok = line.strip().split('\t')
