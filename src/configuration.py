@@ -94,7 +94,7 @@ class Configuration:
         feats = self.feature_ids()
         word_feats, pos_feats, label_feats = [], [], []
         for i,f in enumerate(feats):
-            word_feats.append(self.entries[f].norm) if f is not None else word_feats.append('<null>')
+            word_feats.append(self.entries[f].form) if f is not None else word_feats.append('<null>')
             pos_feats.append(self.entries[f].pos) if f is not None else pos_feats.append('<null>')
             if i>=8:
                 label_feats.append(self.arcs[f][1]) if f and self.arcs[f][0]!=-1 is not None else label_feats.append('<null>')
