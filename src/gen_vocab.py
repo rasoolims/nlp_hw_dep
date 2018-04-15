@@ -21,14 +21,16 @@ for i, sen in enumerate(read_conll(os.path.abspath(sys.argv[1]))):
 wv = dict()
 wv['<unk>'] = 0
 wv['<null>'] = 1
-wv['<root>'] = 1
+wv['<root>'] = 2
 
 for w in word_vocab.keys():
-	if word_vocab[w]>1:
+	if (word_vocab[w]>1) and not (w in wv):
 		wv[w] = len(wv)
+		
 pv = dict()
 for p in pos_vocab:
-	pv[p] = len(pv)
+	if not (p in pv):
+		pv[p] = len(pv)
 
 
 w_vocab_writer = codecs.open(os.path.abspath(sys.argv[2])+'.word','w')

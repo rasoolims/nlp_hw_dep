@@ -8,3 +8,5 @@ data/vocabs.labels
 data/vocabs.pos
 
 sed
+
+*.data
